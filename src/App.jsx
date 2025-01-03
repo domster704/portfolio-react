@@ -32,7 +32,7 @@ const App = () => {
 
     return (
         <>
-            <ProjectPopup/>
+            {/*<ProjectPopup/>*/}
             <div className={style.spotlight} ref={spotlightRef}></div>
             <HashRouter>
                 <Routes>

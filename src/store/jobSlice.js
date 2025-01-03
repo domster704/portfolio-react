@@ -37,11 +37,11 @@ const initialState = {
     }, {
         date: "август 2024 — сейчас",
         position: "DevOps developer",
-        subPosition: ["FullStack-разработчик", "Frontend-разработчик"],
+        subPosition: ["FullStack-разработчик", "DevOps-разработчик"],
         companyName: "Novikov TV",
         companyURL: "https://novikovtv.tv/",
         about: "Программирование баз данных и управление, настройка API для интеграции с внешними системами, отладка, написание модульных и интеграционных тестов",
-        skills: ["Linux", "Docker", "TypeScript", "SQL", "PostgreSQL", "NodeJS", "React.JS", "BalenaOS", "BalenaCloud", "OpenBalena"]
+        skills: ["Linux", "Docker", "TypeScript", "SQL", "PostgreSQL", "NodeJS", "React.JS", "BalenaOS", "OpenBalena"]
     }].reverse()
 };
 
