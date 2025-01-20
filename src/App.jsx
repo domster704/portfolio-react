@@ -1,14 +1,26 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import {HashRouter, Route, Routes} from 'react-router-dom';
 import Resume from "./components/page/Resume/Resume";
 
 import * as style from './style.css';
 import AllProjects from "./components/page/AllProjects/AllProjects";
 import ProjectPopup from "./components/page/UI/ProjectPopup/ProjectPopup";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllProjects} from "./http/projectThunk";
+import {fetchAllJobs} from "./http/jobThunk";
 
 const App = () => {
     const spotlightRef = React.useRef(null);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        async function fetch() {
+            await dispatch(fetchAllProjects());
+            await dispatch(fetchAllJobs());
+        }
+
+        fetch().then();
+    }, []);
 
     useLayoutEffect(() => {
         const spotlight = spotlightRef.current;

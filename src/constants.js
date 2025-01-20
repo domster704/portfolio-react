@@ -1,1 +1,2 @@
-export const apiUrl = 'https://api.t-u.kz/';
+export const apiUrl = 'http://localhost:1337/api';
+export const assetsUrl = 'http://localhost:1337';

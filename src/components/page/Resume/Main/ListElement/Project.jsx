@@ -40,7 +40,7 @@ const Project = ({project}) => {
                         </div>
                     </div>
                     <div className={style.specializationAbout}>
-                        {project.about}
+                        <p dangerouslySetInnerHTML={{__html: project.about}}></p>
                     </div>
                     <div className={style.skillsList}>
                         {

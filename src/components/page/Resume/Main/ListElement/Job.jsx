@@ -31,7 +31,9 @@ const Job = ({job}) => {
                             }
                         </div>
                     </div>
-                    <div className={style.specializationAbout}>{job.about}</div>
+                    <div className={style.specializationAbout}>
+                        <p dangerouslySetInnerHTML={{__html: job.about}}></p>
+                    </div>
                     <div className={style.skillsList}>
                         {
                             job.skills.map((skill, index) => {
