@@ -1,2 +1,2 @@
-export const apiUrl = 'http://localhost:1337/api';
-export const assetsUrl = 'http://localhost:1337';
+export const apiUrl = 'https://api.portfolio.ln-kr.ru/api';
+export const assetsUrl = 'https://api.portfolio.ln-kr.ru';
