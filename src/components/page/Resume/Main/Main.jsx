@@ -103,12 +103,12 @@ const Main = () => {
             <div>
                 <div className="mobile-exp">Опыт</div>
                 <div className={style.jobsList}>
-                    <a href='https://portfolio.ln-kr.ru/data/docs/resume.pdf' target="_blank">
-                        <div className={style.viewFullResume}>
-                            <p>Полное резюме</p>
-                            <img src={next} alt=""/>
-                        </div>
-                    </a>
+                    {/*<a href='https://portfolio.ln-kr.ru/data/docs/resume.pdf' target="_blank">*/}
+                    {/*    <div className={style.viewFullResume}>*/}
+                    {/*        <p>Полное резюме</p>*/}
+                    {/*        <img src={next} alt=""/>*/}
+                    {/*    </div>*/}
+                    {/*</a>*/}
                     {
                         jobs.list.map((job, index) => {
                             return <Job key={index} job={job}/>
