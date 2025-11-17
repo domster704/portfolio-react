@@ -17,14 +17,18 @@ const ProjectRow = ({project}) => {
              }}>
             <div className={styleAllProject.col1}>{project.year}</div>
             <div className={styleAllProject.col2}>
-                <a href={project.links[0].link}>
-                    {project.name}
-                    <span className={styleAllProject.linkSvg_block}>
-                        <img className={styleAllProject.linkSvg_block__imgLink}
-                             src={link}
-                             alt=""/>
-                    </span>
-                </a>
+                {
+                    project.links.length > 1 &&
+                    <a href={project.links[0].link}>
+                        {project.name}
+                        <span className={styleAllProject.linkSvg_block}>
+                            <img className={styleAllProject.linkSvg_block__imgLink}
+                                 src={link}
+                                 alt=""/>
+                        </span>
+                    </a>
+                }
+
             </div>
             <div className={styleAllProject.col3}>{project.target}</div>
             <div className={styleAllProject.col4}>
