@@ -33,9 +33,14 @@ const AllProjects = () => {
                     <p className={`${style.col5} ${style.tableHeader} `}>Ссылки</p>
                 </div>
                 {
-                    projectsStore.list.map((item, index) => {
-                        return <ProjectRow key={index} project={item}/>
-                    })
+                    projectsStore.list
+                        .slice()
+                        .sort((a, b) => {
+                            return b.year - a.year
+                        })
+                        .map((item, index) => {
+                            return <ProjectRow key={index} project={item}/>
+                        })
                 }
             </div>
         </div>
