@@ -46,14 +46,23 @@ const Main = () => {
         }
     }, []);
 
-    return (
-        <main className={style.main}>
+    return (<main className={style.main}>
             <div>
                 <div className="mobile-about">О себе</div>
                 <div className={style.about}>
                     <p>
-                        Я — Full-stack разработчик с опытом, специализирующийся на создании веб-приложений,
-                        веб-серверов, UI/UX и конфигурации виртуальных машин.
+                        Я — Middle Full‑stack разработчик с 4+ годами опыта. Сочетаю навыки фронтенда (ReactJS/NextJS),
+                        бэкенда (FastAPI/Python) и DevOps (Docker, Linux, Ansible). Имею опыт разработки веб‑сервисов,
+                        мобильных приложений (Kotlin/Jetpack Compose), автоматизации развёртывания (OpenBalena) и
+                        мониторинга (Zabbix). Стремлюсь к чистым архитектурам и надёжным решениям — умею вести проект от
+                        проектирования до установки в прод.
+                    </p>
+                    <p>
+                        Призёр и победитель крупнейшёго международного хакатона ЛЦТ (Лидеры цифровых
+                        трансформаций):&nbsp;
+                        <b><a href="https://www.mos.ru/news/item/161544073/">1 место</a></b> в 2025 году и&nbsp;
+                        <b><a href="https://www.mos.ru/news/item/140733073/">3 место</a></b>&nbsp;
+                        в 2024 году (в обоих случаях название команды - "МИСИС Два миллиона").
                     </p>
                     <p>
                         Мобильную разработку я изучил в <a href="https://www.samsung.com/ru/inrussia/school/"
@@ -62,35 +71,20 @@ const Main = () => {
                         года. Параллельно с этим набирал опыт в следующих компаниях: ПРОНЕТКОМ и Dial Digital Agency.
                     </p>
                     <p>
-                        В <a href="https://amberizh.ru/" target="_blank">Янтарь+</a> я занимал позицию
-                        Android-разработчика, где улучшил интерфейс мобильного сервиса и
-                        оптимизировал работу алгоритмов.
+                        Мой ключевой стек включает разработку клиент-серверных веб-приложений, PWA и SPA
+                        с использованием <a href="https://react.dev/" target="_blank">ReactJS</a> /
+                        <a href="https://nextjs.org/" target="_blank">&nbsp;NextJS</a> на фронтенде и
 
-                        <br/>В <a href="https://pronetcom.ru/" target="_blank">&nbsp;ПРОНЕТКОМ&nbsp;</a>
-                        я работал Full-stack разработчиком, занимался ускорением SQL-запросов
-                        и улучшениями функционала существующего проекта <a href="https://easymerch.ru/"
-                                                                           target="_blank">EasyMerch</a>.
-
-                        <br/>В настоящее время я занимаю позицию Front-end разработчика в
-                        <a href="https://dialweb.ru/" target="_blank">&nbsp;Dial Digital Agency</a>, где занимаюсь
-                        версткой и
-                        разработкой сайтов под 1С-Битрикс: Управление сайтом. Имею <a
-                        href="https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=34&INDEX=Y"
-                        target="_blank">сертификацию 1C-Битрикс в области "Контент-менеджер".</a>
-                    </p>
-                    <p>Мои ключевые навыки включают: создание и настройка сайтов под управлением
-                        <a href="https://www.1c-bitrix.ru/products/cms/" target="_blank">1С-Битрикс: Управление
-                            сайтом</a>, разработка клиент-серверных приложений, PWA, SPA на
-                        <a href="https://react.dev/" target="_blank">&nbsp;ReactJS</a> +
-                        <a href="https://palletsprojects.com/p/flask/" target="_blank">&nbsp;Flask</a>/
-                        <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a>/
-                        <a href="https://expressjs.com/ru/" target="_blank">ExpressJS</a>,
-                        конфигурация Linux-серверов, <a href="https://nginx.org/ru/" target="_blank">Nginx</a>,
-                        <a href="https://www.postgresql.org/" target="_blank">&nbsp;PostgreSQL</a>,
-                        создание кроссплатформенного ПО на <a href="https://www.qt.io/" target="_blank">QT</a>.
+                        <a href="https://fastapi.tiangolo.com/" target="_blank">&nbsp;FastAPI</a> на бэкенде.
+                        Работаю с <a href="https://www.postgresql.org/" target="_blank">&nbsp;PostgreSQL</a>,
+                        применяю SQLAlchemy, Alembic и придерживаюсь принципов чистой архитектуры и DDD.
+                        Имею опыт администрирования Linux-серверов, настройки
+                        <a href="https://www.nginx.org/" target="_blank">&nbsp;Nginx</a>,
+                        контейнеризации с Docker / Docker Compose, автоматизации через Ansible
+                        и выпуска SSL-сертификатов с Certbot.
                     </p>
                     <p>
-                        Также я получаю высшее образование в <a href="https://misis.ru/" target="_blank">&nbsp;НИТУ
+                        Также я получаю высшее образование в <a href="https://misis.ru/" target="_blank">НИТУ
                         МИСИС&nbsp;</a> по специальности <a
                         href="https://misis.ru/applicants/admission/baccalaureate-and-specialty/faculties/math/"
                         target="_blank">&nbsp;прикладная математика</a> и продолжаю развиваться как Full&#8209;stack
@@ -109,13 +103,11 @@ const Main = () => {
                     {/*        <img src={next} alt=""/>*/}
                     {/*    </div>*/}
                     {/*</a>*/}
-                    {
-                        [...jobs.list]
-                            .sort((a, b) => a.order - b.order)
-                            .map((job, index) => {
-                                return <Job key={index} job={job}/>
-                            })
-                    }
+                    {[...jobs.list]
+                        .sort((a, b) => a.order - b.order)
+                        .map((job, index) => {
+                            return <Job key={index} job={job}/>
+                        })}
                 </div>
             </div>
             <div>
@@ -127,18 +119,15 @@ const Main = () => {
                             <img src={next} alt=""/>
                         </div>
                     </Link>
-                    {
-                        projects.list.map((project, index) => {
-                            if (!project.active) {
-                                return;
-                            }
-                            return <Project key={index} project={project}/>
-                        })
-                    }
+                    {projects.list.map((project, index) => {
+                        if (!project.active) {
+                            return;
+                        }
+                        return <Project key={index} project={project}/>
+                    })}
                 </div>
             </div>
-        </main>
-    );
+        </main>);
 }
 
 export default Main;
