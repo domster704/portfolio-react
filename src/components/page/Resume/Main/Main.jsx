@@ -110,9 +110,11 @@ const Main = () => {
                     {/*    </div>*/}
                     {/*</a>*/}
                     {
-                        jobs.list.map((job, index) => {
-                            return <Job key={index} job={job}/>
-                        })
+                        [...jobs.list]
+                            .sort((a, b) => a.order - b.order)
+                            .map((job, index) => {
+                                return <Job key={index} job={job}/>
+                            })
                     }
                 </div>
             </div>
